@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charSet="utf-8" /></head>
+  <body>
+    <!-- This file exists only so Netlify registers the "contact" form at build time. -->
+    <!-- It is never shown to users; the real form lives in src/routes/contact.tsx. -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="topic" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>

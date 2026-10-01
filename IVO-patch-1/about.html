@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | IVO One</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --surface: #FBFAF7;
+      --surface-alt: #E7E3DC;
+      --panel: #241E17;
+      --ink: #1A1714;
+      --accent: #A9814C;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 40px;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid rgba(36, 30, 23, .08);
+    }
+
+    nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--panel);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: auto;
+      display: block;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      border-radius: 30px;
+      background: var(--accent);
+      color: var(--surface);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero {
+      background: var(--surface-alt);
+      padding: 88px 0 80px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    article {
+      width: 100%;
+      max-width: 21.59cm;
+      margin: 0 auto;
+      padding: 2.54cm;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.85;
+      overflow-wrap: break-word;
+    }
+
+    article p {
+      margin: 0 0 20px;
+      text-align: justify;
+      text-align-last: left;
+    }
+
+    h2 {
+      margin: 52px 0 20px;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: -.5px;
+      text-align: left;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    h3 {
+      margin: 30px 0 18px;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    footer {
+      background: var(--panel);
+      color: var(--surface);
+      padding: 48px 0 28px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    footer a {
+      color: rgba(251, 250, 247, .75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: var(--surface);
+    }
+
+    .wordmark {
+      overflow: hidden;
+      height: 170px;
+      margin-top: 32px;
+      font-size: min(26vw, 360px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.045em;
+      color: rgba(251, 250, 247, .07);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 24px;
+      }
+
+      nav {
+        height: 64px;
+      }
+
+      .button {
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 56px 0;
+      }
+
+      article {
+        padding: 40px 24px 64px;
+      }
+
+      h2 {
+        margin-top: 40px;
+        font-size: 21px;
+      }
+
+      .wordmark {
+        height: 90px;
+      }
+    }
+
+    @page {
+      size: letter;
+      margin: 2.54cm;
+    }
+
+    @media print {
+      header,
+      .hero,
+      footer {
+        display: none;
+      }
+
+      article {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2,
+      h3 {
+        break-after: avoid;
+      }
+
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+    }
+  </style>
+<style>
+  header .brand img {
+    filter: brightness(0) saturate(100%)
+      invert(66%) sepia(65%) saturate(492%)
+      hue-rotate(3deg) brightness(92%) contrast(89%) !important;
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="./index.html#top" aria-label="IVO One home">
+        <img src="assets/ivo-logo.png" alt="IVO">
+        <span>ONE</span>
+      </a>
+
+      <a class="button" href="./index.html#top">
+        Back to home
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="container">
+      <p class="eyebrow">IVO One</p>
+      <h1 id="page-title">About Us</h1>
+    </div>
+  </section>
+
+  <main>
+    <article aria-label="About IVO One">
+      <h2>About IVO One</h2>
+
+      <p>IVO One is a digital payment platform designed to make the use of digital assets for everyday spending more practical, secure and accessible.</p>
+
+      <p>Our platform connects supported digital assets with real-world payment capabilities, enabling eligible users to fund their account and use the IVO One Debit Visa Card for everyday purchases through supported Visa payment channels.</p>
+
+      <p>By combining digital asset infrastructure with established payment networks, IVO One aims to provide a seamless and familiar payment experience while maintaining a strong focus on security, compliance and operational reliability.</p>
+
+      <p>We believe digital assets should be easier to use in everyday life. Our goal is to simplify the payment experience and provide users with a practical way to move from digital assets to real-world spending.</p>
+
+      <h2>Our Vision</h2>
+
+      <p>To create a more accessible payment experience where digital assets can be used easily and efficiently for everyday transactions.</p>
+
+      <h2>Our Mission</h2>
+
+      <p>To connect digital assets with real-world payments through secure, reliable and user-friendly payment solutions.</p>
+
+      <h2>What We Stand For</h2>
+
+      <h3>Practical Payments</h3>
+
+      <p>We focus on turning digital assets into practical payment capabilities for everyday use.</p>
+
+      <h3>Simple Experience</h3>
+
+      <p>Our products are designed to make funding, card management and everyday spending straightforward and easy to understand.</p>
+
+      <h3>Security &amp; Compliance</h3>
+
+      <p>Security and responsible operations are fundamental to our platform. We work with established payment, technology and compliance partners to support appropriate customer verification, transaction monitoring and payment processing.</p>
+
+      <h3>Reliable Infrastructure</h3>
+
+      <p>IVO One brings together digital asset and payment infrastructure to provide a dependable experience from funding through to card spending.</p>
+
+      <h2>Built for Everyday Use</h2>
+
+      <p>Our focus is simple: enabling customers to use supported digital assets through a familiar card payment experience.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <span class="footer-brand">IVO ONE</span>
+        <a href="./index.html#top">Back to home</a>
+      </div>
+
+      <div class="wordmark" aria-hidden="true">IVO</div>
+    </div>
+  </footer>
+</body>
+</html>
