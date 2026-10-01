@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -788,6 +789,59 @@ class Component extends DCLogic {
     return vals;
   }
 }
+</script>
+<style>
+  /* Discourage selecting text and dragging images. */
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+
+  /* Keep forms usable. */
+  input,
+  textarea,
+  [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+</style>
+
+<script>
+  (() => {
+    function isEditable(target) {
+      return target instanceof Element &&
+        Boolean(target.closest(
+          'input, textarea, [contenteditable="true"]'
+        ));
+    }
+
+    // Discourage right-click saving and copying.
+    document.addEventListener('contextmenu', (event) => {
+      if (!isEditable(event.target)) {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener('copy', (event) => {
+      if (!isEditable(event.target)) {
+        event.preventDefault();
+      }
+    });
+
+    // Discourage dragging images and videos.
+    document.addEventListener('dragstart', (event) => {
+      if (
+        event.target instanceof Element &&
+        event.target.closest('img, video')
+      ) {
+        event.preventDefault();
+      }
+    });
+  })();
 </script>
 </body>
 </html>
